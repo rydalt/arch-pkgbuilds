@@ -1,0 +1,13 @@
+post_install() {
+  echo "Installed dkms-prune."
+  echo
+  echo "Run once with:"
+  echo "  sudo systemctl start dkms-prune.service"
+  echo
+  echo "Enable at boot with:"
+  echo "  sudo systemctl enable dkms-prune.service"
+}
+
+post_upgrade() {
+  post_install
+}

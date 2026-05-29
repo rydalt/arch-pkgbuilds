@@ -1,0 +1,23 @@
+pkgname=dkms-prune
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Prune stale DKMS entries for kernels no longer present in /usr/lib/modules"
+arch=('any')
+license=('MIT')
+depends=('bash' 'dkms' 'systemd')
+optdepends=('kernel-modules-hook: cleans stale /usr/lib/modules trees before DKMS pruning')
+install="${pkgname}.install"
+source=(
+  "${pkgname}"
+  "${pkgname}.service"
+)
+sha256sums=('bd0d7c38d87bab6e9adbd16c790ebf428a141ec1fea2d4b7e785817e574046a3'
+            'affcc0d35e138f1fcf4662ff3dd710dafebfe794fe81453105a86431ae9ae273')
+
+package() {
+  install -Dm755 "${srcdir}/${pkgname}" \
+    "${pkgdir}/usr/bin/${pkgname}"
+
+  install -Dm644 "${srcdir}/${pkgname}.service" \
+    "${pkgdir}/usr/lib/systemd/system/${pkgname}.service"
+}

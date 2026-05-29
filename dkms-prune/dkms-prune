@@ -1,0 +1,23 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+current_kernel="$(uname -r)"
+
+dkms status | while IFS= read -r line; do
+  [[ "$line" != *,* ]] && continue
+
+  module="${line%%,*}"
+  rest="${line#*, }"
+  kernel="${rest%%,*}"
+
+  [[ -z "$module" || -z "$kernel" ]] && continue
+
+  # Never touch the currently running kernel.
+  [[ "$kernel" == "$current_kernel" ]] && continue
+
+  # If the kernel module directory still exists, keep the DKMS entry.
+  [[ -d "/usr/lib/modules/$kernel" ]] && continue
+
+  echo "Removing stale DKMS entry: ${module} for ${kernel}"
+  dkms remove "$module" -k "$kernel" || true
+done

@@ -1,0 +1,14 @@
+[Unit]
+Description=Prune stale DKMS entries for removed kernels
+Documentation=man:dkms(8)
+# If kernel-modules-hook's cleanup service is present/enabled in the same boot
+# transaction, run after it. This does not require it to exist or start it.
+After=linux-modules-cleanup.service
+ConditionPathExists=/usr/bin/dkms
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/dkms-prune
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,38 @@
+# makepkg / Arch package build artifacts
+*/pkg/
+*/src/
+*/*.pkg.tar
+*/*.pkg.tar.*
+*/*.src.tar.gz
+*/*.log
+
+# makepkg signing artifacts
+*/*.sig
+
+# Generated package metadata / databases, if you make local repos
+*.db
+*.db.*
+*.files
+*.files.*
+
+# Common compression artifacts from package/source outputs
+*.tar
+*.tar.*
+*.zip
+*.gz
+*.xz
+*.zst
+
+# Keep actual PKGBUILD source files tracked
+!*/PKGBUILD
+!*/.SRCINFO
+!*/README*
+!*/LICENSE*
+!*/LICENSE
+
+# Editor / OS junk
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~

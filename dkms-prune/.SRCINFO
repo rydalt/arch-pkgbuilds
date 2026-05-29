@@ -1,0 +1,17 @@
+pkgbase = dkms-prune
+	pkgdesc = Prune stale DKMS entries for kernels no longer present in /usr/lib/modules
+	pkgver = 1.0.0
+	pkgrel = 1
+	install = dkms-prune.install
+	arch = any
+	license = MIT
+	depends = bash
+	depends = dkms
+	depends = systemd
+	optdepends = kernel-modules-hook: cleans stale /usr/lib/modules trees before DKMS pruning
+	source = dkms-prune
+	source = dkms-prune.service
+	sha256sums = bd0d7c38d87bab6e9adbd16c790ebf428a141ec1fea2d4b7e785817e574046a3
+	sha256sums = affcc0d35e138f1fcf4662ff3dd710dafebfe794fe81453105a86431ae9ae273
+
+pkgname = dkms-prune
