@@ -1,5 +1,10 @@
 # arch-pkgbuilds
 
+## block-js
+
+Installs a pacman pre-transaction hook that blocks installation or upgrades of `npm`, `npm-*`, `bun`, `pnpm`, `nodejs`,
+Node-related `node-*`/`nodejs-*` packages, `nvm`, and `python-nodeenv`.
+
 ## dkms-prune
 
 Cleanup stale dkms modules

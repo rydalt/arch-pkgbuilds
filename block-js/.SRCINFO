@@ -1,0 +1,24 @@
+pkgbase = block-js
+	pkgdesc = Pacman hook blocking Node.js and JavaScript tooling
+	pkgver = 1.0.0
+	pkgrel = 1
+	arch = any
+	license = MIT
+	depends = pacman
+	conflicts = npm
+	conflicts = npm-check-updates
+	conflicts = bun
+	conflicts = pnpm
+	conflicts = nodejs
+	conflicts = nodejs-lts-iron
+	conflicts = nodejs-lts-jod
+	conflicts = nodejs-lts-krypton
+	conflicts = node-gyp
+	conflicts = nodejs-nopt
+	conflicts = semver
+	conflicts = nvm
+	conflicts = python-nodeenv
+	source = block-js.hook
+	sha256sums = 36927ac8f80cbbcbeab8daf24a77284e09477ce3461bf36099b7c693090835fa
+
+pkgname = block-js

@@ -1,0 +1,18 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = npm
+Target = npm-*
+Target = bun
+Target = pnpm
+Target = nodejs
+Target = nodejs-*
+Target = node-*
+Target = nvm
+Target = python-nodeenv
+
+[Action]
+Description = Blocking unwanted Node.js tooling
+When = PreTransaction
+Exec = /usr/bin/false

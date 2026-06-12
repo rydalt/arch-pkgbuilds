@@ -1,0 +1,17 @@
+pkgname=block-js
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Pacman hook blocking Node.js and JavaScript tooling"
+arch=('any')
+license=('MIT')
+depends=('pacman')
+conflicts=('npm' 'npm-check-updates' 'bun' 'pnpm' 'nodejs' 'nodejs-lts-iron' 'nodejs-lts-jod' 'nodejs-lts-krypton' 'node-gyp' 'nodejs-nopt' 'semver' 'nvm' 'python-nodeenv')
+source=(
+  "${pkgname}.hook"
+)
+sha256sums=('36927ac8f80cbbcbeab8daf24a77284e09477ce3461bf36099b7c693090835fa')
+
+package() {
+  install -Dm644 "${srcdir}/${pkgname}.hook" \
+    "${pkgdir}/usr/share/libalpm/hooks/${pkgname}.hook"
+}
