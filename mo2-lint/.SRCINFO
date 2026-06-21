@@ -1,0 +1,17 @@
+pkgbase = mo2-lint
+	pkgdesc = Mod Organizer 2 Linux Installer
+	pkgver = 7.0.0rc5
+	pkgrel = 1
+	url = https://github.com/Furglitch/modorganizer2-linux-installer
+	arch = x86_64
+	license = GPL-3.0-only
+	depends = procps-ng
+	depends = xdg-utils
+	optdepends = steam: Steam games support
+	optdepends = protontricks: external Protontricks support
+	optdepends = winetricks: external Winetricks support
+	options = !strip
+	source = mo2-lint-7.0.0rc5::https://github.com/Furglitch/modorganizer2-linux-installer/releases/download/7.0.0-rc5/mo2-lint
+	sha256sums = 97ac3f43457c39464fbb2d9687a23678fa81d148da79f3b79b6f14a954145fcf
+
+pkgname = mo2-lint

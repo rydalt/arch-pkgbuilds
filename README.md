@@ -16,3 +16,7 @@ when kernel updates ocurr so that reboots can be deferred.
 
 That package does provide a service `linux-modules-cleanup.service` to cleanup old kernel modules, but it doesn't
 affect dkms modules which is specifically what this deals with.
+
+## mo2-lint
+
+Packages the MO2-LINT executable from the Mod Organizer 2 Linux Installer releases.
