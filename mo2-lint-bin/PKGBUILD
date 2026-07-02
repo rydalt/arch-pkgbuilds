@@ -1,0 +1,37 @@
+pkgname=mo2-lint-bin
+pkgver=7.0.0rc6
+pkgrel=1
+_binname=mo2-lint
+_tag=7.0.0-rc6
+pkgdesc="Mod Organizer 2 Linux Installer"
+arch=(
+  'x86_64'
+)
+url="https://github.com/Furglitch/modorganizer2-linux-installer"
+license=(
+  'GPL-3.0-only'
+)
+depends=(
+  'procps-ng'
+  'xdg-utils'
+)
+optdepends=(
+  'steam: Steam games support'
+  'protontricks: external Protontricks support'
+  'winetricks: external Winetricks support'
+)
+provides=(
+  "mo2-lint=${pkgver}"
+)
+conflicts=(
+  'mo2-lint'
+)
+source=("${_binname}-${pkgver}::${url}/releases/download/${_tag}/${_binname}")
+sha256sums=(
+  'f85d8cd36fad25e01a50e34935420eb8a7950a70ec85e14e06658ecbe3342eae'
+)
+
+package() {
+  install -Dm755 "${srcdir}/${_binname}-${pkgver}" \
+    "${pkgdir}/usr/bin/${_binname}"
+}
